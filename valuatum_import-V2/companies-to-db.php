@@ -39,7 +39,7 @@ foreach ($companies as &$company) {
     $company->v_id = $result[0]['company'];
   }
 
-  // Try to fetch ticker from eod (best guess).
+  // Try to fetch ticker from eod (best guess). Diddi Dadda.
   $eod_res = json_decode(file_get_contents('https://eodhistoricaldata.com/api/querysearch/?q=' . urlencode($company->name)));
   foreach ($eod_res as $item) {
     $splitted_ticker = explode('.', explode(' - ', $item)[0]);
